@@ -5,7 +5,7 @@ require('dotenv').config();
 const port = process.env.port|| 3000;
 const passport = require('./auth');
 
-
+const PORT = process.env.PORT || 3000;
 
 
 
@@ -36,10 +36,10 @@ const personRoutes = require('./routes/personRoutes');
 const menuRoutes = require('./routes/menuRoutes');
 
 
-app.use('/person',localAuthMiddleware,personRoutes);
+app.use('/person',personRoutes);
 app.use('/menu',menuRoutes);
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('listening on port 3000');
 })
 
